@@ -287,6 +287,9 @@ export default class Layer extends React.Component<Props, {}> {
     map.on('mouseenter', this.id, this.onMouseEnter);
     map.on('mouseleave', this.id, this.onMouseLeave);
     map.on('mousedown', this.id, this.onMouseDown);
+    map.on('touchenter', this.id, this.onMouseEnter);
+    map.on('touchleave', this.id, this.onMouseLeave);
+    map.on('touchmove', this.id, this.onMouseDown);
     map.on('styledata', this.onStyleDataChange);
   }
 
@@ -315,6 +318,8 @@ export default class Layer extends React.Component<Props, {}> {
     map.off('click', this.onClick);
     map.off('mouseenter', this.onMouseEnter);
     map.off('mouseleave', this.onMouseLeave);
+    map.off('touchenter', this.onMouseEnter);
+    map.off('touchleave', this.onMouseLeave);
     map.off('styledata', this.onStyleDataChange);
   }
 
